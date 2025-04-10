@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ITAC Solutions</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+  <script src="script.js"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <header>
+    <img src="logo.png" alt="ITAC Solutions Logo" />
+    <nav>
+      <a href="#services">Services</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1>Welcome to ITAC Solutions</h1>
+    <p>We specialize in IT and Accounting solutions including server installation, networking, software solutions, tax, and audit services across Nigeria.</p>
+  </section>
+
+  <section id="services" class="services">
+    <div class="card">
+      <h3>IT Services</h3>
+      <p>Supply and Installation of Servers, Networking, Intercom, CCTV, and Fire Alarm Systems.</p>
+    </div>
+    <div class="card">
+      <h3>Software Solutions</h3>
+      <p>Custom software solutions tailored to your business needs.</p>
+    </div>
+    <div class="card">
+      <h3>Accounting Solutions</h3>
+      <p>Deployment of Accounting Software, Account Management, Tax Services and Audit.</p>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <h2>Contact Us</h2>
+    <form onsubmit="sendMail(event)">
+      <input type="text" id="name" placeholder="Your Name" required />
+      <input type="email" id="email" placeholder="Your Email" required />
+      <textarea id="message" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+    <p><strong>Phone:</strong> +234 808 164 1153</p>
+    <p><strong>Address:</strong> No 108, Bode Thomas, Surulere (Same building as DSTV)</p>
+
+    <div class="social-links">
+      <a href="https://facebook.com" target="_blank" title="Facebook"><i class="fab fa-facebook"></i></a>
+      <a href="https://twitter.com" target="_blank" title="Twitter"><i class="fab fa-twitter"></i></a>
+      <a href="https://linkedin.com" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+      <a href="mailto:contact@itacsolutions.ng" title="Email"><i class="fas fa-envelope"></i></a>
+    </div>
+
+    <div class="social-buttons">
+      <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i> Facebook</a>
+      <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i> Twitter</a>
+      <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
+    </div>
+  </section>
+
+  <a class="whatsapp-btn" href="https://wa.me/2348081641153" target="_blank" title="Chat on WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <footer>
+    &copy; 2025 ITAC Solutions. All rights reserved.
+  </footer>
+</body>
+
+</html>
