@@ -75,6 +75,50 @@ body {
   color: var(--primary);
 }
 
+/* Hide menu by default on small screens */
+.nav-links {
+  display: none;
+  flex-direction: column;
+  background-color: var(--primary);
+  position: absolute;
+  top: 70px;
+  right: 20px;
+  width: 200px;
+  padding: 1rem;
+  border-radius: 8px;
+  z-index: 1000;
+}
+
+/* Show menu when .show class is added */
+.nav-links.show {
+  display: flex;
+}
+
+/* Show nav horizontally on larger screens */
+@media (min-width: 768px) {
+  .nav-links {
+    display: flex;
+    flex-direction: row;
+    position: static;
+    background: none;
+    padding: 0;
+  }
+
+  .menu-toggle {
+    display: none;
+  }
+}
+
+/* Style hamburger button */
+.menu-toggle {
+  font-size: 2rem;
+  background: none;
+  border: none;
+  color: var(--text-light);
+  cursor: pointer;
+}
+
+
 .hero {
   background: url('train2.jpg') no-repeat center center / cover;
   color: var(--text-light);
@@ -499,18 +543,20 @@ h2 {
 </head>
 <body>
   <header class="navbar">
-    <div class="logo">ITAC Solutions</div>
-    <nav>
-      <ul class="nav-links">
-        <li><a href="#about"class="active">About</a></li>
-        <li><a href="#services"class="active">Services</a></li>
-        <li><a href="#portfolio"class="active">Portfolio</a></li>
-        <li><a href="#contact"class="active">Contact</a></li>
-    
+  <div class="logo">ITAC Solutions</div>
 
-      </ul>
-    </nav>
-  </header>
+  <!-- Hamburger Menu Button -->
+  <button class="menu-toggle" aria-label="Toggle Menu">&#9776;</button>
+
+  <nav>
+    <ul class="nav-links">
+      <li><a href="#about" class="active">About</a></li>
+      <li><a href="#services" class="active">Services</a></li>
+      <li><a href="#portfolio" class="active">Portfolio</a></li>
+      <li><a href="#contact" class="active">Contact</a></li>
+    </ul>
+  </nav>
+</header>
 
   <section class="hero">
     <div class="hero-text">
@@ -746,7 +792,14 @@ h2 {
 
 </script>
 
+<script>
+  const toggleBtn = document.querySelector('.menu-toggle');
+  const navLinks = document.querySelector('.nav-links');
 
+  toggleBtn.addEventListener('click', () => {
+    navLinks.classList.toggle('show');
+  });
+</script>
 
 
 
