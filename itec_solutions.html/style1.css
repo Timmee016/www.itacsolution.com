@@ -1,0 +1,254 @@
+  /* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f4f7fa;
+    color: #2c3e50;
+    line-height: 1.6;
+  }
+
+  .section {
+    padding: 4rem 2rem;
+  }
+
+  h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+
+  .service-description {
+    max-width: 800px;
+    margin: auto;
+    text-align: center;
+    font-size: 1.2rem;
+  }
+
+  .service-list {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    max-width: 1000px;
+    margin: auto;
+  }
+
+  .service-item {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 2rem;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+  }
+
+  .service-item:hover {
+    transform: scale(1.05);
+  }
+
+  /* Animation CSS */
+  /*.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 1s forwards;
+  }
+
+  .slide-up {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: slideUp 1s forwards;
+  }
+
+  .pop-up {
+    opacity: 0;
+    transform: scale(0.95);
+    animation: popUp 0.8s forwards;
+  }
+
+  @keyframes fadeIn {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes slideUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes popUp {
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  /* For Software Solutions */
+  /*.software-section {
+    background-color: #e8f1f5;
+  }
+
+  .software-item {
+    background-color: #fff;
+    border-left: 5px solid #00d1d1;
+    padding: 2rem;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+  }
+
+  .software-item:hover {
+    transform: scale(1.05);
+  }*/
+
+  /* For Accounting Solutions */
+  /*.accounting-section {
+    background-color: #f4f7fa;
+  }
+
+  .accounting-item {
+    background-color: #fff;
+    border-left: 5px solid #0a192f;
+    padding: 2rem;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+  }
+
+  .accounting-item:hover {
+    transform: scale(1.05);
+  }*/
+
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Poppins', sans-serif;
+    background-image: url('softwaresolutions.jpg'); /* Replace with your image URL */
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    min-height: 100vh;
+    color: #2c3e50;
+    line-height: 1.6;
+  }
+   
+  
+  .section {
+    padding: 4rem 2rem;
+  }
+  
+  h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+  
+  .service-description {
+    max-width: 800px;
+    margin: auto;
+    text-align: center;
+    font-size: 1.2rem;
+  }
+  
+  .service-list {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    max-width: 1000px;
+    margin: 3rem auto;
+  }
+  
+  @media (min-width: 768px) {
+    .service-list {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  
+  .service-item {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 1rem;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+    text-align: center;
+    cursor: pointer;
+  }
+  
+  .service-item:hover {
+    transform: scale(1.03);
+  }
+  
+  .service-item img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 6px;
+    margin-bottom: 1rem;
+  }
+  
+  /* Popup Styles */
+  .popup {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background: rgba(0, 0, 0, 0.7);
+  }
+  
+  .popup-content {
+    background-color: #fff;
+    margin: 10% auto;
+    padding: 2rem;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 500px;
+    position: relative;
+    animation: popUp 0.5s ease-in-out;
+  }
+  
+  .popup-content img {
+    width: 100%;
+    height: auto;
+    border-radius: 6px;
+    margin-bottom: 1.5rem;
+  }
+  
+  .close-btn {
+    color: #aaa;
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .close-btn:hover {
+    color: #000;
+  }
+  
+  /* Pop-up animation */
+  @keyframes popUp {
+    from {
+      transform: scale(0.9);
+      opacity: 0;
+    }
+    to {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+  
