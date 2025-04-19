@@ -1,78 +1,755 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ITAC Solutions</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
-  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
-  <script src="script.js"></script>
-  <link rel="stylesheet" href="style.css">
-</head>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+  <style>
+    /* my CSS here */
+    * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #f4f7fa;
+  color: #2c3e50;
+  line-height: 1.6;
+}
+
+:root {
+  --primary: #0a192f;
+  --secondary: #1c2541;
+  --accent: #00d1d1;
+  --text-light: #ffffff;
+  --text-dark: #2c3e50;
+}
+
+.navbar {
+  background-color: var(--primary);
+  color: var(--text-light);
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-links a {
+  background-color: var(--accent);
+  color: var(--primary);
+  padding: 0.5rem 1.2rem;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 3px 8px rgba(0, 209, 209, 0.2);
+}
+
+.nav-links a:hover {
+  background-color: #00b3b3;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 179, 179, 0.3);
+}
+
+.nav-links a.active {
+  background-color: var(--accent);
+  color: var(--primary);
+}
+
+.hero {
+  background: url('train2.jpg') no-repeat center center / cover;
+  color: var(--text-light);
+  text-align: center;
+  padding: 6rem 1.5rem;
+  position: relative;
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(10, 25, 47, 0.6); /* Semi-transparent marine blue overlay */
+  z-index: 1;
+}
+
+.hero .hero-text {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  margin: auto;
+}
+
+.hero h1 {
+  font-size: 2rem;
+}
+
+.hero p {
+  font-size: 1.1rem;
+}
+
+@media (min-width: 768px) {
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero p {
+    font-size: 1.3rem;
+  }
+}
+
+.btn {
+  background: var(--accent);
+  color: var(--primary);
+  padding: 0.75rem 1.5rem;
+  border: none;
+  font-weight: 600;
+  text-transform: uppercase;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.btn:hover {
+  background: #00b3b3;
+}
+
+section {
+  padding: 4rem 2rem;
+}
+
+h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.about-section {
+  background-color: #ffffff;
+  text-align: center;
+  max-width: 800px;
+  margin: auto;
+}
+
+.services-section {
+  background-color: #e8f1f5;
+}
+
+.services-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  max-width: 1000px;
+  margin: auto;
+}
+
+@media (min-width: 768px) {
+  .services-grid {
+    flex-direction: row;
+  }
+}
+
+.service-card {
+  background-color: #ffffff;
+  border-left: 5px solid var(--accent);
+  padding: 2rem;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+}
+
+
+.footer {
+  background-color: var(--primary);
+  color: var(--text-light);
+  text-align: center;
+  padding: 2rem;
+  font-size: 0.9rem;
+}
+
+/* Animation CSS */
+.fade-in,
+.slide-up,
+.pop-up {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 1s ease-out;
+}
+
+.animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes popUp {
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.portfolio-section {
+  padding: 4rem 2rem;
+  text-align: center;
+  background-color: #f4f7fa;
+}
+
+.portfolio-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+}
+
+.portfolio-section {
+  padding: 60px 20px;
+  background-color: #f7f3ed;
+  text-align: center;
+}
+
+.portfolio-section h2 {
+  font-size: 2rem;
+  margin-bottom: 30px;
+  color: #333;
+}
+
+/*.carousel-container {
+  overflow: hidden;
+  width: 80vw;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px 0;
+  cursor: grab;
+}
+
+.carousel-track {
+  display: flex;
+  gap: 40px;
+  transition: transform 0.3s ease;
+}
+
+.carousel-track img {
+  height: 60px;
+  object-fit: contain;
+  filter: grayscale(80%);
+  transition: filter 0.3s ease;
+}
+
+.carousel-track img:hover {
+  filter: grayscale(0%);
+}
+
+@media (max-width: 768px) {}
+  .carousel-btn {
+    font-size: 1.5rem;
+    padding: 0.4rem 0.8rem;
+  }
+
+}*/
+
+
+
+.carousel-container {
+  overflow: hidden;
+  width: 95vw;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px 0;
+  cursor: grab;
+}
+
+.carousel-track {
+  display: flex;
+  gap: 40px;
+  transition: transform 0.3s ease;
+}
+
+.carousel-track img {
+  height: 150px;
+  width: auto;
+  max-width: 100%;
+  object-fit: contain;
+  filter: grayscale(80%);
+  transition: filter 0.3s ease, transform 0.3s ease;
+}
+
+.carousel-track img:hover {
+  filter: grayscale(0%);
+  transform: scale(1.05);
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .carousel-track img {
+    height: 120px;
+  }
+}
+
+@media (max-width: 768px) {
+  .carousel-track img {
+    height: 100px;
+  }
+}
+
+@media (max-width: 480px) {
+  .carousel-track img {
+    height: 80px;
+  }
+}
+
+
+
+
+
+.core-values {
+  background-color: #ffffff;
+  padding: 60px 20px;
+  font-family: Arial, sans-serif;
+  color: #333;
+}
+
+.core-values .container {
+  max-width: 1100px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.core-values h2 {
+  font-size: 32px;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.core-values .intro {
+  font-size: 18px;
+  margin-bottom: 40px;
+  color: #555;
+}
+
+.values-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 30px;
+  text-align: left;
+}
+
+.value-item h3 {
+  font-size: 22px;
+  margin-bottom: 10px;
+  color: #222;
+}
+
+.value-item p {
+  font-size: 16px;
+  color: #555;
+}
+
+/* Responsive layout */
+@media (min-width: 768px) {
+  .values-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+    
+
+.contact-section {
+  background-color: #ffffff;
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.contact-section h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: var(--primary);
+}
+
+#contact-form {
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+#contact-form input,
+#contact-form textarea {
+  padding: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-family: 'Poppins', sans-serif;
+  resize: vertical;
+  transition: border 0.3s ease;
+}
+
+#contact-form input:focus,
+#contact-form textarea:focus {
+  border-color: var(--accent);
+  outline: none;
+}
+
+#contact-form button {
+  background-color: var(--accent);
+  color: var(--primary);
+  font-weight: 600;
+  text-transform: uppercase;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  font-family: 'Poppins', sans-serif;
+}
+
+#contact-form button:hover {
+  background-color: #00b3b3;
+}
+.social-buttons {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.btn {
+  padding: 10px 20px;
+  border-radius: 30px;
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.whatsapp {
+  background-color: #25D366;
+}
+
+.whatsapp:hover {
+  background-color: #1ebd5d;
+}
+
+.facebook {
+  background-color: #1877F2;
+}
+
+.facebook:hover {
+  background-color: #0e65d6;
+}
+
+.linkedin {
+  background-color: #0077B5;
+}
+
+.linkedin:hover {
+  background-color: #005f91;
+}
+
+.instagram {
+  background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+}
+
+.instagram:hover {
+  opacity: 0.8;
+}
+
+
+
+  </style>
+</head>
 <body>
-  <header>
-    <img src="logo.png" alt="ITAC Solutions Logo" />
+  <header class="navbar">
+    <div class="logo">ITAC Solutions</div>
     <nav>
-      <a href="#services">Services</a>
-      <a href="#contact">Contact</a>
+      <ul class="nav-links">
+        <li><a href="#about"class="active">About</a></li>
+        <li><a href="#services"class="active">Services</a></li>
+        <li><a href="#portfolio"class="active">Portfolio</a></li>
+        <li><a href="#contact"class="active">Contact</a></li>
+    
+
+      </ul>
     </nav>
   </header>
 
   <section class="hero">
-    <h1>Welcome to ITAC Solutions</h1>
-    <p>We specialize in IT and Accounting solutions including server installation, networking, software solutions, tax, and audit services across Nigeria.</p>
-  </section>
+    <div class="hero-text">
+      <h1 class="fade-in">Transforming Accounting & Technology</h1>
+      <p class="fade-in delay">Empowering businesses through innovative accounting and digital solutions</p>
+      <a href="#services" class="btn pulse">Explore Our Services</a>
 
-  <section id="services" class="services">
-    <div class="card">
-      <h3>IT Services</h3>
-      <p>Supply and Installation of Servers, Networking, Intercom, CCTV, and Fire Alarm Systems.</p>
-    </div>
-    <div class="card">
-      <h3>Software Solutions</h3>
-      <p>Custom software solutions tailored to your business needs.</p>
-    </div>
-    <div class="card">
-      <h3>Accounting Solutions</h3>
-      <p>Deployment of Accounting Software, Account Management, Tax Services and Audit.</p>
     </div>
   </section>
 
-  <section id="contact" class="contact">
+  <section id="about" class="about-section slide-up">
+    <h2>About ITAC Solutions</h2>
+    <p>
+      At ITAC Solutions, we specialize in delivering top-notch tech and accounting services that help businesses grow in the digital age. From web development to tech consultancy, we tailor solutions to fit your unique needs.
+    </p>
+  </section>
+
+  <section id="services" class="services-section">
+    <h2>Our Services</h2>
+    <div class="services-grid">
+      <div class="service-card pop-up fade-in">
+        <h3>IT Services</h3>
+        <p>From server installations to network design, we offer a full range of IT services.</p>
+        <a href="it-services.html">Learn More</a>
+      </div>
+      <div class="service-card pop-up fade-in delay">
+        <h3>Software Solutions</h3>
+        <p>We develop custom software tailored to your business needs.</p>
+        <a href="software-solutions.html">Learn More</a>
+      </div>
+      <div class="service-card pop-up fade-in delay-more">
+        <h3>Accounting Solutions</h3>
+        <p>We deploy accounting software and offer accounting and tax services.</p>
+        <a href="oaccounting-solutions.html">Learn More</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="portfolio" class="portfolio-section" aria-label="Portfolio Carousel">
+    <h2>Our Portfolio of Brands</h2>
+  
+    <div class="carousel-container swipe carousel">
+      <div class="carousel-track">
+        <!--<div class="image-carousel" role="region" aria-roledescription="carousel"></div>-->
+        <img src="microsoft.png" class="carousel-img active" alt="microsoft">
+        <img src="sage.png" class="carousel-img " alt="Sage Accounting">
+        <img src="sap.png" class="carousel-img" alt="Sap Accounting">
+        <img src="quickbooks.png" class="carousel-img" alt="Busy Accounting">
+        <img src="busy.png" class="carousel-img " alt="Busy Accounting software">
+        <img src="tally.png" class="carousel-img " alt="tally software">
+        <img src="dynamic.jpg" class="carousel-img" alt="Dynamic software">
+      </div>
+     <!---- <button class="carousel-btn prev">&#10094;</button>
+      <button class="carousel-btn next">&#10095;</button>
+    </div>-->
+  </section>
+
+    <section class="bg-white py-12 px-6 md:px-16">
+      <div class="max-w-6xl mx-auto text-center">
+        <h2 class="text-3xl font-bold text-gray-800 mb-4">Our Core Values</h2>
+        <p class="text-lg text-gray-600 mb-10">
+          At <strong>ITAC Solutions</strong>, our values are the foundation of everything we do. They guide our work, shape our culture, and drive the results we deliver for our clients.
+        </p>
+        <div class="grid md:grid-cols-2 gap-8 text-left">
+          <div>
+            <h3 class="text-xl font-semibold text-gray-800 mb-2">Integrity</h3>
+            <p class="text-gray-600">
+              We uphold honesty, transparency, and trust in every interaction. Doing the right thing isn’t optional—it’s who we are.
+            </p>
+          </div>
+          <div>
+            <h3 class="text-xl font-semibold text-gray-800 mb-2">Innovation</h3>
+            <p class="text-gray-600">
+              We embrace change and use forward-thinking strategies to build smart, modern solutions that meet today’s challenges.
+            </p>
+          </div>
+          <div>
+            <h3 class="text-xl font-semibold text-gray-800 mb-2"> Excellence</h3>
+            <p class="text-gray-600">
+              We’re committed to delivering top-quality results with precision, professionalism, and passion.
+            </p>
+          </div>
+          <div>
+            <h3 class="text-xl font-semibold text-gray-800 mb-2"> Customer Focus</h3>
+            <p class="text-gray-600">
+              Your success is our priority. We listen, understand, and deliver solutions tailored to your unique goals.
+            </p>
+          </div>
+          <div>
+            <h3 class="text-xl font-semibold text-gray-800 mb-2">Collaboration</h3>
+            <p class="text-gray-600">
+              We believe in the power of teamwork—within our team and with yours. Together, we go further.
+            </p>
+          </div>
+        </div>
+      </div>
+    
+  </section>
+
+  <section id="contact" class="contact-section">
     <h2>Contact Us</h2>
-    <form onsubmit="sendMail(event)">
-      <input type="text" id="name" placeholder="Your Name" required />
-      <input type="email" id="email" placeholder="Your Email" required />
-      <textarea id="message" placeholder="Your Message" required></textarea>
-      <button type="submit">Send Message</button>
-    </form>
-    <p><strong>Phone:</strong> +234 808 164 1153</p>
-    <p><strong>Address:</strong> No 108, Bode Thomas, Surulere (Same building as DSTV)</p>
+    <form id="contact-form">
+      <input type="text" name="user_name" placeholder="Your Name" required />
+      <input type="email" name="user_email" placeholder="Your Email" required />
+      <textarea name="message" placeholder="Your Message" required></textarea>
+      <button type="submit">Send</button> 
+    </form>    
+    <!-- Social Media Buttons -->
+<div class="social-buttons">
+  <a href="https://wa.me/2348081641153" class="btn whatsapp" target="_blank">WhatsApp</a>
+  <a href="https://facebook.com/profile.php?id=100064162233819" class="btn facebook" target="_blank">Facebook</a>
+  <a href="https://linkedin.com/company/itac-solution/" class="btn linkedin" target="_blank">LinkedIn</a>
+  <a href="https://instagram.com/YOUR_PROFILE" class="btn instagram" target="_blank">Instagram</a>
 
-    <div class="social-links">
-      <a href="https://facebook.com" target="_blank" title="Facebook"><i class="fab fa-facebook"></i></a>
-      <a href="https://twitter.com" target="_blank" title="Twitter"><i class="fab fa-twitter"></i></a>
-      <a href="https://linkedin.com" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
-      <a href="mailto:contact@itacsolutions.ng" title="Email"><i class="fas fa-envelope"></i></a>
-    </div>
+</div>
 
-    <div class="social-buttons">
-      <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i> Facebook</a>
-      <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i> Twitter</a>
-      <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
-    </div>
   </section>
 
-  <a class="whatsapp-btn" href="https://wa.me/2348081641153" target="_blank" title="Chat on WhatsApp">
-    <i class="fab fa-whatsapp"></i>
-  </a>
 
-  <footer>
-    &copy; 2025 ITAC Solutions. All rights reserved.
+  <footer class="footer">
+    <p>&copy; 2012 ITAC Solutions. All rights reserved.</p>
+    <p><a href="privacy.html" style="color: #00d1d1; text-decoration: underline;">Privacy Policy</a></p>
   </footer>
-</body>
 
+
+ <script>src="script.js"</script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      /*** Scroll Animation using IntersectionObserver ***/
+      const animatedElements = document.querySelectorAll('.fade-in, .slide-up, .pop-up');
+  
+      const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('animate'); // Use .animate in your CSS for all effects
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.2 });
+  
+      animatedElements.forEach(element => observer.observe(element));
+
+
+    
+
+
+      /*** Swipe Carousel Logic ***/
+document.addEventListener('DOMContentLoaded', () => {
+      const container = document.querySelector('.carousel-container');
+      if (container) {
+        const track = container.querySelector('.carousel-track img');
+  
+        let isDown = false;
+        let startX;
+        let scrollLeft;
+  
+        container.addEventListener('mousedown', (e) => {
+          isDown = true;
+          container.classList.add('active');
+          startX = e.pageX - container.offsetLeft;
+          scrollLeft = container.scrollLeft;
+        });
+  
+        container.addEventListener('mouseleave', () => {
+          isDown = false;
+          container.classList.remove('active');
+        });
+  
+        container.addEventListener('mouseup', () => {
+          isDown = false;
+          container.classList.remove('active');
+        });
+  
+        container.addEventListener('mousemove', (e) => {
+          if (!isDown) return;
+          e.preventDefault();
+          const x = e.pageX - container.offsetLeft;
+          const walk = (x - startX) * 2; // scroll speed
+          container.scrollLeft = scrollLeft - walk;
+        });
+  
+        // Touch support
+        container.addEventListener('touchstart', (e) => {
+          isDown = true;
+          startX = e.touches[0].pageX;
+          scrollLeft = container.scrollLeft;
+        });
+  
+        container.addEventListener('touchend', () => {
+          isDown = false;
+        });
+  
+        container.addEventListener('touchmove', (e) => {
+          if (!isDown) return;
+          const x = e.touches[0].pageX;
+          const walk = (x - startX) * 2;
+          container.scrollLeft = scrollLeft - walk;
+        });
+      }
+  
+      /*** Button-Controlled Image Carousel ***/
+      const images = document.querySelectorAll('.carousel-track img');
+      const prevBtn = document.getElementById('prevBtn');
+      const nextBtn = document.getElementById('nextBtn');
+      let currentIndex = 0;
+  
+      function updateCarousel(index) {
+        images.forEach((img, i) => {
+          img.classList.toggle('active', i === index);
+        });
+      }
+  
+      if (nextBtn && prevBtn && images.length > 0) {
+        nextBtn.addEventListener('click', () => {
+          currentIndex = (currentIndex + 1) % images.length;
+          updateCarousel(currentIndex);
+        });
+  
+        prevBtn.addEventListener('click', () => {
+          currentIndex = (currentIndex - 1 + images.length) % images.length;
+          updateCarousel(currentIndex);
+        });
+  
+        updateCarousel(currentIndex);
+      }
+    });
+
+     // ✅ Auto-slide every 3 seconds
+  setInterval(() => {
+    currentIndex = (currentIndex + 1) % images.length;
+    updateCarousel(currentIndex);
+  }, 3000);
+});
+
+</script>
+
+
+
+
+
+</body>
 </html>
