@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IT Services | ITAC Solutions</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+  
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-image: url('itservices1.jpg'); /* Replace with your image URL */
+      background-size: cover;
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      min-height: 100vh;
+      color: #2c3e50;
+      line-height: 1.6;
+      position: relative;
+      z-index: 0;
+    }
+  
+    /* Optional: dark overlay for readability */
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5); /* adjust darkness */
+      z-index: -1;
+    }
+  
+    .section {
+      padding: 4rem 2rem;
+    }
+  
+    h2 {
+      font-size: 2.5rem;
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+  
+    .service-description {
+      max-width: 800px;
+      margin: auto;
+      text-align: center;
+      font-size: 1.2rem;
+    }
+  
+    .service-list {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      max-width: 1000px;
+      margin: 3rem auto;
+    }
+  
+    @media (min-width: 768px) {
+      .service-list {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+  
+    .service-item {
+      background-color: #fff;
+      border: 1px solid #ccc;
+      padding: 1rem;
+      border-radius: 8px;
+      transition: transform 0.3s ease;
+      text-align: center;
+      cursor: pointer;
+    }
+  
+    .service-item:hover {
+      transform: scale(1.03);
+    }
+  
+    .service-item img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 6px;
+      margin-bottom: 1rem;
+    }
+  
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 9999;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background: rgba(0, 0, 0, 0.7);
+    }
+  
+    .modal-content {
+      background-color: #fff;
+      margin: 10% auto;
+      padding: 2rem;
+      border-radius: 10px;
+      width: 90%;
+      max-width: 500px;
+      position: relative;
+      animation: popUp 0.5s ease-in-out;
+    }
+  
+    .close-btn {
+      color: #aaa;
+      position: absolute;
+      top: 15px;
+      right: 20px;
+      font-size: 28px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+  
+    .close-btn:hover {
+      color: #000;
+    }
+  
+    @keyframes popUp {
+      from {
+        transform: scale(0.9);
+        opacity: 0;
+      }
+      to {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+  </style>
+  
+</head>
+<body>
+
+  <section class="section fade-in">
+    <h2>Our IT Services</h2>
+    <p class="service-description fade-in delay">
+      We offer comprehensive IT services to help businesses optimize their technology infrastructure.
+    </p>
+
+    <div class="service-list">
+      <div class="service-item" onclick="openModal('Network Design', 'We design secure and scalable networks tailored to your business.')">
+        <img src="networkdesign.png" alt="Network Design">
+        <h3>Network Design</h3>
+      </div>
+      <div class="service-item" onclick="openModal('Server Installations', 'We install, configure and maintain high-performance servers.')">
+        <img src="serverinstallation.jpg" alt="Server Installations">
+        <h3>Server Installations</h3>
+      </div>
+      <div class="service-item" onclick="openModal('Tech Consultancy', 'Our experts offer guidance for smart IT decision-making.')">
+        <img src="techconsultancy.jpg" alt="Tech Consultancy">
+        <h3>Tech Consultancy</h3>
+      </div>
+      <div class="service-item" onclick="openModal('Our team assists with preparing and installing quality and long lasting fire alarm systems ')">
+      <img src="firealarms.jpg" alt="Fire Alarms">
+      <h3>Fire Alarms</h3>
+      </div>
+      <div class="service-item" onclick="openModal('Our team assists with procuring and installing lasting quality laptops and laptop hardwares ')">
+        <img src="laptop.jpg" alt="Fire Alarms">
+        <h3>computer hardware supply</h3>
+        </div>
+        <div class="service-item" onclick="openModal('Our team assists with preparing and installing quality and long lasting and state of the art CCTV cameras ')">
+          <img src="cctvinstallation.jpg" alt="Fire Alarms">
+          <h3>cctv</h3>
+          </div>
+    </div>
+  </section>
+
+  <!-- Modal -->
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn" onclick="closeModal()">&times;</span>
+      <h3 id="modal-title">Title</h3>
+      <p id="modal-description">Description</p>
+    </div>
+  </div>
+
+  <script>
+    function openModal(title, description) {
+      document.getElementById("modal-title").textContent = title;
+      document.getElementById("modal-description").textContent = description;
+      document.getElementById("modal").style.display = "block";
+    }
+
+    function closeModal() {
+      document.getElementById("modal").style.display = "none";
+    }
+
+    window.onclick = function(event) {
+      const modal = document.getElementById("modal");
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    };
+
+    // Animation on scroll
+    document.addEventListener('DOMContentLoaded', function () {
+      const animatedElements = document.querySelectorAll('.fade-in');
+
+      const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('fade-in');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.2 });
+
+      animatedElements.forEach(element => {
+        observer.observe(element);
+      });
+    });
+  </script>
+
+</body>
+</html>
+
+
+
+
