@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Accounting Services | ITAC Solutions</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+  <link href="style2.css" rel="stylesheet">
+</head>
+<body>
+
+  <section class="section fade-in">
+    <h2>Our Accounting Services</h2>
+    <p class="service-description fade-in delay">We provide efficient and reliable accounting solutions for businesses of all sizes.</p>
+
+    <div class="service-list">
+      <div class="service-item slide-up fade-in" data-image="accountingsoftware.jpg">
+        <h3>Accounting Software Integration</h3>
+        <p>We integrate cutting-edge accounting software into your business operations for seamless tracking.</p>
+        <p>Quickbook POS</p>
+        <p>Busy Accounting Software</p>
+      </div>
+      <div class="service-item slide-up fade-in delay" data-image="taxadvisory.jpg">
+        <h3>Tax Advisory Services</h3>
+        <p>We offer expert advice on tax planning and compliance to optimize your financial health.</p>
+        <p>Filing of Tax</p>
+      </div>
+      <div class="service-item slide-up fade-in delay-more" data-image="financialreport.jpg">
+        <h3>Financial Reporting</h3>
+        <p>Our team assists with preparing detailed financial reports to help you make informed decisions.</p>
+        <P>Preparation of Mangement of Account for Audit Purposes</P>
+      </div>
+    </div>
+  </section>
+
+  <!-- Popup -->
+  <div class="popup" id="popup">
+    <div class="popup-content">
+      <img src="" alt="Popup Image" id="popup-img">
+      <div>
+        <button>Learn More</button>
+        <button class="close-btn">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Scroll Animation
+    document.addEventListener('DOMContentLoaded', function() {
+      const animatedElements = document.querySelectorAll('.fade-in, .slide-up');
+  
+      const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('fade-in');
+            entry.target.classList.add('slide-up');  // Add slide-up class if needed
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.2 });
+  
+      animatedElements.forEach(element => {
+        observer.observe(element);
+      });
+  
+      // Popup Logic
+      const popup = document.getElementById('popup');
+      const popupImg = document.getElementById('popup-img');
+      const closeBtn = document.querySelector('.close-btn');
+  
+      document.querySelectorAll('.service-item').forEach(item => {
+        item.addEventListener('click', () => {
+          const imgSrc = item.getAttribute('data-image');
+          popupImg.src = imgSrc;
+          popup.style.display = 'flex';
+        });
+      });
+  
+      closeBtn.addEventListener('click', () => {
+        popup.style.display = 'none';
+        popupImg.src = '';
+      });
+  
+      popup.addEventListener('click', (e) => {
+        if (e.target === popup) {
+          popup.style.display = 'none';
+          popupImg.src = '';
+        }
+      });
+    });
+  </script>
+  
+
+</body>
+</html>
