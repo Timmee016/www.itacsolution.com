@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Software Solutions</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style1.css"> <!-- Linked the external CSS file -->
+ </head>
+  
+
+<body
+
+
+  <section class="section fade-in">
+    <h2>Software Services</h2>
+    <p class="service-description fade-in delay">We provide custom software development to enhance your buisness operations.</p>
+
+    <div class="service-list">
+      <div class="service-item slide-up fade-in" data-image="softwaredevelopment1.jpg">
+        <h3>Custom Software Development</h3>
+        <p>We create software and mails tailored specifically to your buisness needs and requirements</p>
+        <P>Webmails for communication</P>
+      </div>
+      <div class="service-item slide-up fade-in delay" data-image="intercoms.jpg">
+        <h3>Networking and Intrcoms</h3>
+        <p>We professionally configure and install intercom systems tailored to your needs -stay connected and secure</p>
+      </div>
+      
+    </div>
+  </section>
+
+ <!-- Popup -->
+ <div class="popup" id="popup">
+  <div class="popup-content">
+    <img src="" alt="Popup Image" id="popup-img">
+    <div>
+      <button>Learn More</button>
+      <button class="close-btn">Close</button>
+    </div>
+  </div>
+</div>
+
+<script>
+  // Scroll Animation
+  document.addEventListener('DOMContentLoaded', function() {
+    const animatedElements = document.querySelectorAll('.fade-in, .slide-up');
+
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('fade-in');
+          entry.target.classList.add('slide-up');  // Add slide-up class if needed
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.2 });
+
+    animatedElements.forEach(element => {
+      observer.observe(element);
+    });
+
+    // Popup Logic
+    const popup = document.getElementById('popup');
+    const popupImg = document.getElementById('popup-img');
+    const closeBtn = document.querySelector('.close-btn');
+
+    document.querySelectorAll('.service-item').forEach(item => {
+      item.addEventListener('click', () => {
+        const imgSrc = item.getAttribute('data-image');
+        popupImg.src = imgSrc;
+        popup.style.display = 'flex';
+      });
+    });
+
+    closeBtn.addEventListener('click', () => {
+      popup.style.display = 'none';
+      popupImg.src = '';
+    });
+
+    popup.addEventListener('click', (e) => {
+      if (e.target === popup) {
+        popup.style.display = 'none';
+        popupImg.src = '';
+      }
+    });
+  });
+</script>
+
+
+</body>
+</html>
