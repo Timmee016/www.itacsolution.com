@@ -7,7 +7,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
   <style>
     /* my CSS here */
-* {
+    * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -31,14 +31,13 @@ body {
 .navbar {
   background-color: var(--primary);
   color: var(--text-light);
-  padding: 1rem 1.5rem;
+  padding: 1rem 2rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
   position: sticky;
   top: 0;
   z-index: 1000;
-  flex-wrap: wrap;
 }
 
 .logo {
@@ -46,19 +45,16 @@ body {
   font-weight: 600;
 }
 
-/* Responsive nav links */
 .nav-links {
   list-style: none;
-  display: none;
-  flex-direction: column;
-  width: 100%;
-  margin-top: 1rem;
+  display: flex;
+  gap: 2rem;
 }
 
 .nav-links a {
   background-color: var(--accent);
   color: var(--primary);
-  padding: 0.6rem 1.2rem;
+  padding: 0.5rem 1.2rem;
   border-radius: 8px;
   font-weight: 600;
   font-size: 0.95rem;
@@ -66,7 +62,6 @@ body {
   text-decoration: none;
   transition: all 0.3s ease;
   box-shadow: 0 3px 8px rgba(0, 209, 209, 0.2);
-  margin-bottom: 0.5rem;
 }
 
 .nav-links a:hover {
@@ -78,16 +73,6 @@ body {
 .nav-links a.active {
   background-color: var(--accent);
   color: var(--primary);
-}
-
-@media (min-width: 768px) {
-  .nav-links {
-    display: flex;
-    flex-direction: row;
-    gap: 2rem;
-    width: auto;
-    margin-top: 0;
-  }
 }
 
 .hero {
@@ -107,7 +92,7 @@ body {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(10, 25, 47, 0.6);
+  background: rgba(10, 25, 47, 0.6); /* Semi-transparent marine blue overlay */
   z-index: 1;
 }
 
@@ -115,24 +100,15 @@ body {
   position: relative;
   z-index: 2;
   max-width: 800px;
+  margin: auto;
 }
 
 .hero h1 {
-  font-size: 1.8rem;
+  font-size: 2rem;
 }
 
 .hero p {
-  font-size: 1rem;
-}
-
-@media (min-width: 480px) {
-  .hero h1 {
-    font-size: 2rem;
-  }
-
-  .hero p {
-    font-size: 1.1rem;
-  }
+  font-size: 1.1rem;
 }
 
 @media (min-width: 768px) {
@@ -152,11 +128,9 @@ body {
   border: none;
   font-weight: 600;
   text-transform: uppercase;
-  border-radius: 6px;
+  border-radius: 4px;
   cursor: pointer;
   transition: background 0.3s ease;
-  min-width: 44px;
-  min-height: 44px;
 }
 
 .btn:hover {
@@ -164,7 +138,7 @@ body {
 }
 
 section {
-  padding: 4rem 1.5rem;
+  padding: 4rem 2rem;
 }
 
 h2 {
@@ -211,6 +185,7 @@ h2 {
   transform: translateY(-5px);
 }
 
+
 .footer {
   background-color: var(--primary);
   color: var(--text-light);
@@ -219,7 +194,100 @@ h2 {
   font-size: 0.9rem;
 }
 
-/* Carousel Section */
+/* Animation CSS */
+.fade-in,
+.slide-up,
+.pop-up {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 1s ease-out;
+}
+
+.animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes popUp {
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.portfolio-section {
+  padding: 4rem 2rem;
+  text-align: center;
+  background-color: #f4f7fa;
+}
+
+.portfolio-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+}
+
+.portfolio-section {
+  padding: 60px 20px;
+  background-color: #f7f3ed;
+  text-align: center;
+}
+
+.portfolio-section h2 {
+  font-size: 2rem;
+  margin-bottom: 30px;
+  color: #333;
+}
+
+/*.carousel-container {
+  overflow: hidden;
+  width: 80vw;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px 0;
+  cursor: grab;
+}
+
+.carousel-track {
+  display: flex;
+  gap: 40px;
+  transition: transform 0.3s ease;
+}
+
+.carousel-track img {
+  height: 60px;
+  object-fit: contain;
+  filter: grayscale(80%);
+  transition: filter 0.3s ease;
+}
+
+.carousel-track img:hover {
+  filter: grayscale(0%);
+}
+
+@media (max-width: 768px) {}
+  .carousel-btn {
+    font-size: 1.5rem;
+    padding: 0.4rem 0.8rem;
+  }
+
+}*/
+
+
+
 .carousel-container {
   overflow: hidden;
   width: 95vw;
@@ -231,12 +299,13 @@ h2 {
 
 .carousel-track {
   display: flex;
-  gap: 30px;
+  gap: 40px;
   transition: transform 0.3s ease;
 }
 
 .carousel-track img {
-  height: 120px;
+  height: 150px;
+  width: auto;
   max-width: 100%;
   object-fit: contain;
   filter: grayscale(80%);
@@ -248,25 +317,33 @@ h2 {
   transform: scale(1.05);
 }
 
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .carousel-track img {
+    height: 120px;
+  }
+}
+
 @media (max-width: 768px) {
   .carousel-track img {
-    height: 90px;
+    height: 100px;
   }
 }
 
 @media (max-width: 480px) {
-  .carousel-track {
-    gap: 20px;
-  }
-
   .carousel-track img {
-    height: 70px;
+    height: 80px;
   }
 }
+
+
+
+
 
 .core-values {
   background-color: #ffffff;
   padding: 60px 20px;
+  font-family: Arial, sans-serif;
   color: #333;
 }
 
@@ -295,12 +372,6 @@ h2 {
   text-align: left;
 }
 
-@media (min-width: 768px) {
-  .values-grid {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-
 .value-item h3 {
   font-size: 22px;
   margin-bottom: 10px;
@@ -311,6 +382,15 @@ h2 {
   font-size: 16px;
   color: #555;
 }
+
+/* Responsive layout */
+@media (min-width: 768px) {
+  .values-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+    
 
 .contact-section {
   background-color: #ffffff;
@@ -338,6 +418,7 @@ h2 {
   border: 1px solid #ccc;
   border-radius: 6px;
   font-size: 1rem;
+  font-family: 'Poppins', sans-serif;
   resize: vertical;
   transition: border 0.3s ease;
 }
@@ -358,12 +439,12 @@ h2 {
   border-radius: 6px;
   cursor: pointer;
   transition: background 0.3s ease;
+  font-family: 'Poppins', sans-serif;
 }
 
 #contact-form button:hover {
   background-color: #00b3b3;
 }
-
 .social-buttons {
   display: flex;
   gap: 10px;
@@ -371,9 +452,13 @@ h2 {
   margin-top: 20px;
 }
 
-.social-buttons .btn {
-  min-width: 44px;
-  min-height: 44px;
+.btn {
+  padding: 10px 20px;
+  border-radius: 30px;
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
 }
 
 .whatsapp {
@@ -407,6 +492,7 @@ h2 {
 .instagram:hover {
   opacity: 0.8;
 }
+
 
 
   </style>
@@ -448,7 +534,7 @@ h2 {
       <div class="service-card pop-up fade-in">
         <h3>IT Services</h3>
         <p>From server installations to network design, we offer a full range of IT services.</p>
-        <a href="itservives.html">Learn More</a>
+        <a href="it-services.html">Learn More</a>
       </div>
       <div class="service-card pop-up fade-in delay">
         <h3>Software Solutions</h3>
@@ -470,12 +556,12 @@ h2 {
       <div class="carousel-track">
         <!--<div class="image-carousel" role="region" aria-roledescription="carousel"></div>-->
         <img src="microsoft.png" class="carousel-img active" alt="microsoft">
-        <img src="sage.png" class="carousel-img " alt="Sage Accounting">
-        <img src="sap.png" class="carousel-img" alt="Sap Accounting">
-        <img src="quickbooks.png" class="carousel-img" alt="Busy Accounting">
-        <img src="busy.png" class="carousel-img " alt="Busy Accounting software">
-        <img src="tally.png" class="carousel-img " alt="tally software">
-        <img src="dynamic.jpg" class="carousel-img" alt="Dynamic software">
+        <img src="sage.png" class="carousel-img active" alt="Sage Accounting">
+        <img src="sap.png" class="carousel-img active" alt="Sap Accounting">
+        <img src="quickbooks.png" class="carousel-img active" alt="Busy Accounting">
+        <img src="busy.png" class="carousel-img active" alt="Busy Accounting software">
+        <img src="tally.png" class="carousel-img active" alt="tally software">
+        <img src="dynamic.jpg" class="carousel-img active" alt="Dynamic software">
       </div>
      <!---- <button class="carousel-btn prev">&#10094;</button>
       <button class="carousel-btn next">&#10095;</button>
@@ -572,10 +658,9 @@ h2 {
 
 
       /*** Swipe Carousel Logic ***/
-document.addEventListener('DOMContentLoaded', () => {
       const container = document.querySelector('.carousel-container');
       if (container) {
-        const track = container.querySelector('.carousel-track img');
+        const track = container.querySelector('.carousel-track');
   
         let isDown = false;
         let startX;
@@ -626,7 +711,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
   
       /*** Button-Controlled Image Carousel ***/
-      const images = document.querySelectorAll('.carousel-track img');
+      const images = document.querySelectorAll('.carousel img');
       const prevBtn = document.getElementById('prevBtn');
       const nextBtn = document.getElementById('nextBtn');
       let currentIndex = 0;
@@ -657,7 +742,7 @@ document.addEventListener('DOMContentLoaded', () => {
     currentIndex = (currentIndex + 1) % images.length;
     updateCarousel(currentIndex);
   }, 3000);
-});
+
 
 </script>
 
