@@ -448,6 +448,44 @@ h2 {
   }
 }
 
+
+
+
+
+/* Desktop menu styles */
+.nav-menu {
+  display: flex;
+  gap: 1rem;
+}
+
+/* Hide mobile toggle by default */
+.menu-toggle {
+  display: none;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .nav-menu {
+    display: none;
+    flex-direction: column;
+    background-color: #fff;
+    position: absolute;
+    top: 60px;
+    right: 10px;
+    width: 200px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  }
+
+  .nav-menu.active {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: block;
+    cursor: pointer;
+  }
+}
+
     
 
 .contact-section {
