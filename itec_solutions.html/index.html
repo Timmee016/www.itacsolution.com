@@ -130,13 +130,14 @@ body {
 
 .nav-menu li a {
   text-decoration: none;
+  color: #333; /* Default color for desktop links */
+  font-size: 16px;
+  font-weight: bold;
+  padding: 10px;
 }
 
-/* Mobile menu styles */
-.menu-toggle {
-  display: none; /* Hide on desktop */
-  font-size: 30px;
-  cursor: pointer;
+.nav-menu li a:hover {
+  color: #007bff; /* Color change on hover */
 }
 
 /* Mobile-specific styles */
@@ -151,14 +152,37 @@ body {
     width: 200px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     padding: 10px;
+    margin: 0;
   }
 
   .nav-menu.active {
     display: flex; /* Show the menu when active */
   }
 
+  .nav-menu li {
+    margin: 10px 0; /* Space between items */
+  }
+
+  .nav-menu li a {
+    text-decoration: none;
+    color: #007bff; /* Blue color for links */
+    font-size: 18px; /* Larger font size for mobile */
+    padding: 10px;
+    display: block; /* Make links block-level elements so they fill the width */
+  }
+
+  .nav-menu li a:hover {
+    color: #0056b3; /* Darker blue on hover */
+  }
+
   .menu-toggle {
     display: block; /* Show the hamburger button on mobile */
+    font-size: 30px; /* Size of the hamburger icon */
+    color: #fff; /* Button text color (white for contrast) */
+    background-color: #007bff; /* Blue background color */
+    padding: 10px;
+    border: 2px solid #0056b3; /* Darker blue border */
+    border-radius: 5px; /* Optional: round the edges */
   }
 }
 
