@@ -804,6 +804,20 @@ h2 {
 </script>
 
 
+<script>
+  const toggleButton = document.querySelector('.menu-toggle');
+  const navLinks = document.querySelector('.nav-links');
+
+  toggleButton.addEventListener('click', () => {
+    navLinks.classList.toggle('show');
+  });
+
+toggleButton.addEventListener('click', () => {
+  navLinks.classList.toggle('show');
+  toggleButton.setAttribute('aria-expanded', navLinks.classList.contains('show'));
+});
+</script>
+
 
 </body>
 </html>
