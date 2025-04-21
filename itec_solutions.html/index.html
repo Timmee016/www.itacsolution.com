@@ -934,5 +934,47 @@ toggleButton.addEventListener('click', () => {
   }
 </script>
 
+<script>
+  let currentIndex = 0;
+  const slides = document.querySelectorAll('.carousel-track img');  // All images in the carousel
+  const totalSlides = slides.length;
+
+  // Function to move to the next slide
+  function goToNextSlide() {
+    currentIndex = (currentIndex + 1) % totalSlides; // Move to the next slide, or loop back to the first
+    updateCarouselPosition();
+  }
+
+  // Function to update the carousel's position
+  function updateCarouselPosition() {
+    const offset = -currentIndex * (slides[0].clientWidth + 40); // Adjust for gap between images
+    const carouselTrack = document.querySelector('.carousel-track');
+    carouselTrack.style.transform = `translateX(${offset}px)`; // Move the track container
+  }
+
+  // Set an interval for auto-sliding (change slide every 3 seconds)
+  setInterval(goToNextSlide, 3000);
+
+  // Optional: Swipe/Mouse functionality for manual control (if needed)
+  let startX;
+
+  // On mouse/touch down, record the starting position
+  document.querySelector('.carousel-container').addEventListener('mousedown', (e) => startX = e.pageX);
+  document.querySelector('.carousel-container').addEventListener('touchstart', (e) => startX = e.touches[0].pageX);
+
+  // Detect swipe (mouse move or touch move)
+  document.querySelector('.carousel-container').addEventListener('mouseup', (e) => handleSwipe(e.pageX || e.changedTouches[0].pageX));
+  document.querySelector('.carousel-container').addEventListener('touchend', (e) => handleSwipe(e.changedTouches[0].pageX));
+
+  function handleSwipe(endX) {
+    if (startX - endX > 50) {
+      goToNextSlide(); // Swipe right (go to next slide)
+    } else if (endX - startX > 50) {
+      currentIndex = (currentIndex - 1 + totalSlides) % totalSlides; // Swipe left (go to previous slide)
+      updateCarouselPosition();
+    }
+  }
+</script>
+
 </body>
 </html>
