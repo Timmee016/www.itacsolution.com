@@ -599,6 +599,7 @@ h2 {
 
   <!-- Hamburger Menu Button -->
   <button class="menu-toggle" aria-label="Toggle Menu">&#9776;</button>
+<div class="menu-toggle" onclick="toggleMenu()">☰</div>
 
   <nav>
     <ul class="nav-links">
@@ -885,6 +886,12 @@ toggleButton.addEventListener('click', () => {
 });
 </script>
 
+
+<script>
+  function toggleMenu() {
+    document.getElementById("menu").classList.toggle("active");
+  }
+</script>
 
 </body>
 </html>
