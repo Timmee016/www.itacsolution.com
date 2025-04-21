@@ -274,15 +274,6 @@ h2 {
   }
 }
 
-@keyframes scroll {
-  0% {
-    transform: translateX(0%);
-  }
-  100% {
-    transform: translateX(-50%); /* Adjust this based on total card width */
-  }
-}
-
 
 .portfolio-section {
   padding: 4rem 2rem;
@@ -370,6 +361,24 @@ h2 {
 .carousel-track img:hover {
   filter: grayscale(0%);
   transform: scale(1.05);
+}
+
+
+
+.carousel {
+  overflow: hidden;
+  width: 100%;
+}
+
+.carousel-track {
+  display: flex;
+  gap: 1rem;
+  animation: scroll 20s linear infinite;
+}
+
+.card {
+  min-width: 300px; /* or whatever size fits your layout */
+  flex-shrink: 0;
 }
 
 /* Responsive adjustments */
