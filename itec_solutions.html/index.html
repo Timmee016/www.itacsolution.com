@@ -120,6 +120,51 @@ body {
 }
 
 
+
+/* Default styles (for desktop) */
+.nav-menu {
+  display: flex;
+  gap: 1rem;
+  list-style-type: none;
+}
+
+.nav-menu li a {
+  text-decoration: none;
+}
+
+/* Mobile menu styles */
+.menu-toggle {
+  display: none; /* Hide on desktop */
+  font-size: 30px;
+  cursor: pointer;
+}
+
+/* Mobile-specific styles */
+@media (max-width: 768px) {
+  .nav-menu {
+    display: none; /* Hide the menu by default on mobile */
+    flex-direction: column;
+    background-color: #fff;
+    position: absolute;
+    top: 60px; /* Adjust based on your header height */
+    right: 10px;
+    width: 200px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+  }
+
+  .nav-menu.active {
+    display: flex; /* Show the menu when active */
+  }
+
+  .menu-toggle {
+    display: block; /* Show the hamburger button on mobile */
+  }
+}
+
+
+
+
 .hero {
   background: url('train2.jpg') no-repeat center center / cover;
   color: var(--text-light);
@@ -452,39 +497,6 @@ h2 {
 
 
 
-/* Desktop menu styles */
-.nav-menu {
-  display: flex;
-  gap: 1rem;
-}
-
-/* Hide mobile toggle by default */
-.menu-toggle {
-  display: none;
-}
-
-/* Responsive styles */
-@media (max-width: 768px) {
-  .nav-menu {
-    display: none;
-    flex-direction: column;
-    background-color: #fff;
-    position: absolute;
-    top: 60px;
-    right: 10px;
-    width: 200px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-  }
-
-  .nav-menu.active {
-    display: flex;
-  }
-
-  .menu-toggle {
-    display: block;
-    cursor: pointer;
-  }
-}
 
     
 
@@ -597,18 +609,16 @@ h2 {
   <header class="navbar">
   <div class="logo">ITAC Solutions</div>
 
-  <!-- Hamburger Menu Button -->
-  <button class="menu-toggle" aria-label="Toggle Menu">&#9776;</button>
+  <!-- Mobile Menu Toggle (Hamburger Button) -->
 <div class="menu-toggle" onclick="toggleMenu()">☰</div>
 
-  <nav>
-    <ul class="nav-links">
-      <li><a href="#about" class="active">About</a></li>
-      <li><a href="#services" class="active">Services</a></li>
-      <li><a href="#portfolio" class="active">Portfolio</a></li>
-      <li><a href="#contact" class="active">Contact</a></li>
-    </ul>
-  </nav>
+<!-- Navigation Menu -->
+<ul class="nav-menu" id="menu">
+  <li><a href="#home">Home</a></li>
+  <li><a href="#services">Services</a></li>
+  <li><a href="#portfolio">Portfolio</a></li>
+  <li><a href="#contact">Contact</a></li>
+</ul>
 </header>
 
   <section class="hero">
