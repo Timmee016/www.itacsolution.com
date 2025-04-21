@@ -130,14 +130,18 @@ body {
 
 .nav-menu li a {
   text-decoration: none;
-  color: #333; /* Default color for desktop links */
+  color: #0000FF; /* Blue text color for links */
   font-size: 16px;
   font-weight: bold;
   padding: 10px;
+  background-color: #00FFFF; /* Aqua blue background for buttons */
+  border-radius: 5px; /* Optional: rounded corners for buttons */
+  transition: background-color 0.3s ease; /* Smooth transition for hover effect */
 }
 
 .nav-menu li a:hover {
-  color: #007bff; /* Color change on hover */
+  background-color: #fff; /* White background on hover */
+  color: #00008B; /* Dark blue text color on hover */
 }
 
 /* Mobile-specific styles */
@@ -165,27 +169,30 @@ body {
 
   .nav-menu li a {
     text-decoration: none;
-    color: #007bff; /* Blue color for links */
+    color: #0000FF; /* Blue text color for links */
     font-size: 18px; /* Larger font size for mobile */
     padding: 10px;
     display: block; /* Make links block-level elements so they fill the width */
+    background-color: #00FFFF; /* Aqua blue background for buttons */
+    border-radius: 5px; /* Rounded corners */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition for hover effect */
   }
 
   .nav-menu li a:hover {
-    color: #0056b3; /* Darker blue on hover */
+    background-color: #fff; /* White background on hover */
+    color: #00008B; /* Dark blue text color on hover */
   }
 
   .menu-toggle {
     display: block; /* Show the hamburger button on mobile */
     font-size: 30px; /* Size of the hamburger icon */
     color: #fff; /* Button text color (white for contrast) */
-    background-color: #007bff; /* Blue background color */
+    background-color: #00FFFF; /* Aqua blue background color */
     padding: 10px;
-    border: 2px solid #0056b3; /* Darker blue border */
+    border: 2px solid #00CED1; /* Darker aqua blue border */
     border-radius: 5px; /* Optional: round the edges */
   }
 }
-
 
 
 
