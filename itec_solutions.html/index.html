@@ -196,7 +196,7 @@ body {
 
 
 
-.hero {
+/*.hero {
   background: url('IMG-20250421-WA0096.jpg') no-repeat center center / cover;
   color: var(--text-light);
   text-align: center;
@@ -250,7 +250,70 @@ body {
   .hero p {
     font-size: 1.3rem;
   }
+}*/
+
+
+
+
+
+.hero {
+  background: url('IMG-20250421-WA0096.jpg') no-repeat center center / cover;
+  color: var(--text-light);
+  text-align: center;
+  padding: 6rem 1.5rem;
+  position: relative;
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(10, 25, 47, 0.6); /* Semi-transparent marine blue overlay */
+  z-index: 1;
+}
+
+.hero .hero-text {
+  position: relative;
+  z-index: 2;
+  max-width: 900px;
+  margin: auto;
+  padding: 2rem;
+  text-align: center; /* Corrected 'text align' to 'text-align' */
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+}
+
+.hero p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+/* Fixed the missing closing brace */
+.hero .button-container { 
+  margin-top: 2rem;
+}
+
+@media (min-width: 768px) {
+  .hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .hero p {
+    font-size: 1.3rem;
+  }
+}
+
+
 
 .btn {
   background: var(--accent);
