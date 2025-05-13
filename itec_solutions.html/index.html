@@ -74,13 +74,26 @@ body {
   
 
   
-.logo {
+/*.logo {
   
   font-size: 1.5rem;
   
   font-weight: 600;
   
+}*/
+
+
+  .logo {
+  display: flex;
+  align-items: center;
 }
+
+.logo img {
+  height: 40px;
+  width: auto;
+  display: block;
+}
+
   
 
   
@@ -1189,7 +1202,9 @@ h2 {
 </head>
 <body>
   <header class="navbar">
-  <div class="logo">ITAC Solutions</div>
+  <div class="logo">
+    <img src="untitled design.png" alt="ITAC Solutions Logo">
+  </div>
 
   <!-- Mobile Menu Toggle (Hamburger Button) -->
 <div class="menu-toggle" onclick="toggleMenu()">☰</div>
