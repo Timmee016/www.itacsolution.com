@@ -50,65 +50,55 @@ body {
   
 
   
+/* Navbar */
 .navbar {
-  
   background-color: var(--primary);
-  
   color: var(--text-light);
-  
   padding: 1rem 2rem;
-  
   display: flex;
-  
   justify-content: space-between;
-  
   align-items: center;
-  
   position: sticky;
-  
   top: 0;
-  
   z-index: 1000;
-  
+  flex-wrap: wrap; /* Allow wrapping on smaller screens */
 }
-  
 
-  
-/*.logo {
-  
-  font-size: 1.5rem;
-  
-  font-weight: 600;
-  
-}*/
-
- .logo {
+/* Logo container */
+.logo {
   display: flex;
   align-items: center;
 }
 
-    /*desktop view*/
+/* Logo image - desktop default */
 .logo img {
   height: auto;
   width: 120px;
   display: block;
+  transition: width 0.3s ease;
+}
+
+/* Tablet and below */
+@media (max-width: 768px) {
+  .logo img {
+    width: 100px;
+  }
 }
 
 /* Mobile */
 @media (max-width: 600px) {
   .logo img {
-    max-width: 90px;
+    width: 90px;
   }
 }
 
 /* Very small devices */
 @media (max-width: 400px) {
   .logo img {
-    max-width: 70px;
+    width: 70px;
   }
-}*/
+}
 
-    
 
 
 
