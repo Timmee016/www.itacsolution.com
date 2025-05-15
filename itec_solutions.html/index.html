@@ -83,18 +83,43 @@ body {
 }*/
 
 
- .logo {
+ /*.logo {
   display: flex;
   align-items: center;
 }
 
-    /*desktop view*/
+    /*desktop view*
+.logo img {
+  height: 120px;
+  width: auto;
+  display: block;
+}*/
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+/* Default: Desktop */
 .logo img {
   height: 120px;
   width: auto;
   display: block;
 }
 
+/* Tablet */
+@media (max-width: 1024px) {
+  .logo img {
+    height: 80px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .logo img {
+    height: 50px;
+  }
+}
 
 
 
