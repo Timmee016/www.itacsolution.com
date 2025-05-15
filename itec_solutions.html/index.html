@@ -83,20 +83,59 @@ body {
 }*/
 
 
- .logo {
+/* .logo {
   display: flex;
   align-items: center;
 }
 
-    /*desktop view*/
+    /*desktop view
 .logo img {
   height: auto;
   width: auto;
   display: block;
+}*/
+
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 100%;
+  padding: 10px 0; /* optional spacing */
 }
 
+.logo img {
+  width: 100%;
+  max-width: 150px;
+  height: auto;
+  display: block;
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .logo img {
+    max-width: 120px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .logo img {
+    max-width: 90px;
+  }
+}
+
+/* Very small devices */
+@media (max-width: 400px) {
+  .logo img {
+    max-width: 70px;
+  }
+}
+
+    
 
 
+
+    
 
   
 .nav-links {
