@@ -6,7 +6,8 @@
   <title>ITAC Solutions</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
   <style>
-    
+
+
     /* my CSS here */
   
     * {
@@ -52,7 +53,7 @@ body {
   
 /* Navbar */
 .navbar {
-  background-color: var(--primary);
+  background-color: lightgrey; 
   color: var(--text-light);
   padding: 1rem 2rem;
   display: flex;
@@ -64,11 +65,6 @@ body {
   flex-wrap: wrap; /* Allow wrapping on smaller screens */
 }
 
-/* Logo container */
-.logo {
-  display: flex;
-  align-items: center;
-}
 
 /* Logo image - desktop default */
 .logo img {
@@ -98,13 +94,7 @@ body {
     width: 70px;
   }
 }
-
-
-
-
-    
-
-  
+ 
 .nav-links {
   
   list-style: none;
@@ -223,7 +213,7 @@ body {
   font-size: 16px;  
   font-weight: bold;  
   padding: 10px;  
-  background-color: #00FFFF; /* Aqua blue background for buttons */  
+  background-color: #e6f7f7; /* Aqua blue background for buttons */  
   border-radius: 5px; /* Optional: rounded corners for buttons */  
   transition: background-color 0.3s ease; /* Smooth transition for hover effect */  
 }  
@@ -262,7 +252,7 @@ body {
     font-size: 18px; /* Larger font size for mobile */  
     padding: 10px;  
     display: block; /* Make links block-level elements so they fill the width */  
-    background-color: #00FFFF; /* Aqua blue background for buttons */  
+    background-color:  #e6f7f7; /*#00FFFF; Aqua blue background for buttons */  
     border-radius: 5px; /* Rounded corners */  
     transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition for hover effect */  
   }  
@@ -276,9 +266,9 @@ body {
     display: block; /* Show the hamburger button on mobile */  
     font-size: 30px; /* Size of the hamburger icon */  
     color: #fff; /* Button text color (white for contrast) */  
-    background-color: #00FFFF; /* Aqua blue background color */  
+    background-color: #e6f7f7;/*#00FFFF  Aqua blue background color */  
     padding: 10px;  
-    border: 2px solid #00CED1; /* Darker aqua blue border */  
+    border: 2px solid #e6f7f7;/*#00CED1;  Darker aqua blue border */  
     border-radius: 5px; /* Optional: round the edges */  
   }  
 }  
@@ -650,77 +640,6 @@ h2 {
 }
   
 
-  
-/*.carousel-container {
-  
-  overflow: hidden;
-  
-  width: 80vw;
-  
-  max-width: 600px;
-  
-  margin: 0 auto;
-  
-  padding: 20px 0;
-  
-  cursor: grab;
-  
-}
-  
-
-  
-.carousel-track {
-  
-  display: flex;
-  
-  gap: 40px;
-  
-  transition: transform 0.3s ease;
-  
-}
-  
-
-  
-.carousel-track img {
-  
-  height: 60px;
-  
-  object-fit: contain;
-  
-  filter: grayscale(80%);
-  
-  transition: filter 0.3s ease;
-  
-}
-  
-
-  
-.carousel-track img:hover {
-  
-  filter: grayscale(0%);
-  
-}
-  
-
-  
-@media (max-width: 768px) {}
-  
-  .carousel-btn {
-  
-    font-size: 1.5rem;
-  
-    padding: 0.4rem 0.8rem;
-  
-  }
-  
-
-  
-}*/
-  
-
-  
-
-  
 
   
 .carousel-container {
@@ -819,10 +738,7 @@ h2 {
 }
   
 
-  
-  
-  
-  
+
   
 .carousel-container {  
   overflow: hidden;  
@@ -882,11 +798,6 @@ h2 {
     height: 80px;  
   }  
 }
-  
-
-  
-
-  
 
   
 .core-values {
@@ -987,13 +898,6 @@ h2 {
   
 }  
   
-  
-  
-  
-  
-
-  
-    
   
 
   
@@ -1198,385 +1102,208 @@ h2 {
 }
   
 
-  
-
-  
     
+    .delay {
+      transition-delay: 0.3s;
+    }
 
-
-
-
+    .delay-more {
+      transition-delay: 0.6s;
+    }
   </style>
 </head>
 <body>
-  <header class="navbar">
+
+<header class="navbar">
   <div class="logo">
-  <img src="logo.png" alt="ITAC Solutions Logo">
-</div>
+    <img src="itac_logo_transparent.png" alt="ITAC Solutions Logo">
+  </div>
 
+  <!-- Mobile Menu Toggle -->
+  <div class="menu-toggle" onclick="toggleMenu()">☰</div>
 
-  <!-- Mobile Menu Toggle (Hamburger Button) -->
-<div class="menu-toggle" onclick="toggleMenu()">☰</div>
-
-<!-- Navigation Menu -->
-<ul class="nav-menu" id="menu">
-  <li><a href="#about">About</a></li>
-  <li><a href="#services">Services</a></li>
-  <li><a href="#portfolio">Portfolio</a></li>
-  <li><a href="#contact">Contact</a></li>
-</ul>
+  <!-- Navigation Menu -->
+  <ul class="nav-menu" id="menu">
+    <li><a href="#about">About</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#portfolio">Portfolio</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
 </header>
 
-  <section class="hero">
-    <div class="hero-text">
-      <h1 class="fade-in">Transforming Accounting & Technology</h1>
-      <p class="fade-in delay">Empowering businesses through innovative accounting and digital solutions</p>
-<br>
-<br>
-      <a href="#services" class="btn pulse">Explore Our Services</a>
+<section class="hero">
+  <div class="hero-text">
+    <h1 class="fade-in">Transforming Accounting & Technology</h1>
+    <p class="fade-in delay">Empowering businesses through innovative accounting and digital solutions</p>
+    <br><br>
+    <a href="#services" class="btn pulse">Explore Our Services</a>
+  </div>
+</section>
 
+<section id="about" class="about-section slide-up">
+  <h2>About ITAC Solutions</h2>
+  <p>
+    At ITAC Solutions, we specialize in delivering top-notch tech and accounting services that help businesses grow in the digital age.
+  </p>
+</section>
+
+<section id="services" class="services-section">
+  <h2>Our Services</h2>
+  <div class="services-grid">
+    <div class="service-card pop-up fade-in">
+      <h3>IT Services</h3>
+      <p>From server installations to network design, we offer a full range of IT services.</p>
+      <a href="itservives.html">Learn More</a>
     </div>
-  </section>
+    <div class="service-card pop-up fade-in delay">
+      <h3>Software Solutions</h3>
+      <p>We develop custom software tailored to your business needs.</p>
+      <a href="software-solutions.html">Learn More</a>
+    </div>
+    <div class="service-card pop-up fade-in delay-more">
+      <h3>Accounting Solutions</h3>
+      <p>We deploy accounting software and offer accounting and tax services.</p>
+      <a href="oaccounting-solutions.html">Learn More</a>
+    </div>
+  </div>
+</section>
 
-  <section id="about" class="about-section slide-up">
-    <h2>About ITAC Solutions</h2>
-    <p>
-      At ITAC Solutions, we specialize in delivering top-notch tech and accounting services that help businesses grow in the digital age. From web development to tech consultancy, we tailor solutions to fit your unique needs.
-    </p>
-  </section>
+<section id="portfolio" class="portfolio-section" aria-label="Portfolio Carousel">
+  <h2>Our Portfolio of Brands</h2>
+  <div class="carousel-container scroll carousel">
+    <div class="carousel-track">
+      <img src="microsoft.png" class="carousel-img active" alt="microsoft">
+      <img src="sage.png" class="carousel-img" alt="Sage Accounting">
+      <img src="sap.png" class="carousel-img" alt="Sap Accounting">
+      <img src="quickbooks.png" class="carousel-img" alt="QuickBooks">
+      <img src="busy.png" class="carousel-img" alt="Busy Accounting software">
+      <img src="tally.png" class="carousel-img" alt="Tally software">
+      <img src="dynamic.jpg" class="carousel-img" alt="Dynamic software">
+      <img src="odoo.png" class="carousel-img" alt="Odoo">
+    </div>
+  </div>
+</section>
 
-  <section id="services" class="services-section">
-    <h2>Our Services</h2>
-    <div class="services-grid">
-      <div class="service-card pop-up fade-in">
-        <h3>IT Services</h3>
-        <p>From server installations to network design, we offer a full range of IT services.</p>
-        <a href="itservives.html">Learn More</a>
+<section class="core-values">
+  <div class="container">
+    <h2>Our Core Values</h2>
+    <p class="intro">At <strong>ITAC Solutions</strong>, our values are the foundation of everything we do.</p>
+    <div class="values-grid">
+      <div class="value-item">
+        <h3>Integrity</h3>
+        <p>We uphold honesty and trust in every interaction.</p>
       </div>
-      <div class="service-card pop-up fade-in delay">
-        <h3>Software Solutions</h3>
-        <p>We develop custom software tailored to your business needs.</p>
-        <a href="software-solutions.html">Learn More</a>
+      <div class="value-item">
+        <h3>Innovation</h3>
+        <p>We build smart solutions that meet today’s challenges.</p>
       </div>
-      <div class="service-card pop-up fade-in delay-more">
-        <h3>Accounting Solutions</h3>
-        <p>We deploy accounting software and offer accounting and tax services.</p>
-        <a href="oaccounting-solutions.html">Learn More</a>
+      <div class="value-item">
+        <h3>Excellence</h3>
+        <p>Top-quality results with precision and professionalism.</p>
+      </div>
+      <div class="value-item">
+        <h3>Customer Focus</h3>
+        <p>Your success is our priority.</p>
+      </div>
+      <div class="value-item">
+        <h3>Collaboration</h3>
+        <p>We believe in the power of teamwork—within our team and with yours.</p>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section id="portfolio" class="portfolio-section" aria-label="Portfolio Carousel">
-    <h2>Our Portfolio of Brands</h2>
-  
-    <div class="carousel-container scroll carousel">
-      <div class="carousel-track">
-        <!--<div class="image-carousel" role="region" aria-roledescription="carousel"></div>-->
-        <img src="microsoft.png" class="carousel-img active" alt="microsoft">
-        <img src="sage.png" class="carousel-img" alt="Sage Accounting">
-        <img src="sap.png" class="carousel-img" alt="Sap Accounting">
-        <img src="quickbooks.png" class="carousel-img" alt="Busy Accounting">
-        <img src="busy.png" class="carousel-img" alt="Busy Accounting software">
-        <img src="tally.png" class="carousel-img" alt="tally software">
-        <img src="dynamic.jpg" class="carousel-img" alt="Dynamic software">
-        <img src="odoo.png" class="carousel-img" Alt="Odoo">
+<section id="contact" class="contact-section">
+  <h2>Contact Us</h2>
+  <form id="contact-form">
+    <input type="text" name="user_name" placeholder="Your Name" required />
+    <input type="email" name="user_email" placeholder="Your Email" required />
+    <textarea name="message" placeholder="Your Message" required></textarea>
+    <button type="submit">Send</button> 
+  </form>
 
+  <div class="social-buttons">
+    <a href="https://wa.me/2348081641153" class="btn whatsapp" target="_blank">WhatsApp</a>
+    <a href="https://facebook.com/profile.php?id=100064162233819" class="btn facebook" target="_blank">Facebook</a>
+    <a href="https://linkedin.com/company/itac-solution/" class="btn linkedin" target="_blank">LinkedIn</a>
+    <a href="https://www.instagram.com/itac_solutions/?hl=en" class="btn instagram" target="_blank">Instagram</a>
+  </div>
+</section>
 
-<img src="microsoft.png" class="carousel-img active" alt="microsoft">
-        <img src="sage.png" class="carousel-img" alt="Sage Accounting">
-        <img src="sap.png" class="carousel-img" alt="Sap Accounting">
-        <img src="quickbooks.png" class="carousel-img" alt="Busy Accounting">
-        <img src="busy.png" class="carousel-img" alt="Busy Accounting software">
-        <img src="tally.png" class="carousel-img" alt="tally software">
-        <img src="dynamic.jpg" class="carousel-img" alt="Dynamic software">
-        <img src="odoo.png" class="carousel-img" Alt="Odoo">
-      </div>
+<footer class="footer">
+  <p>&copy; 2012 ITAC Solutions. All rights reserved.</p>
+  <p><a href="privacy.html" style="color: #00d1d1; text-decoration: underline;">Privacy Policy</a></p>
+</footer>
 
-
-
-
-      </div>
-     <!---- <button class="carousel-btn prev">&#10094;</button>
-      <button class="carousel-btn next">&#10095;</button>
-    </div>-->
-  </section>
-
-    <section class="bg-white py-12 px-6 md:px-16">
-      <div class="max-w-6xl mx-auto text-center">
-        <h2 class="text-3xl font-bold text-gray-800 mb-4">Our Core Values</h2>
-        <p class="text-lg text-gray-600 mb-10">
-          At <strong>ITAC Solutions</strong>, our values are the foundation of everything we do. They guide our work, shape our culture, and drive the results we deliver for our clients.
-        </p>
-        <div class="grid md:grid-cols-2 gap-8 text-left">
-          <div>
-            <h3 class="text-xl font-semibold text-gray-800 mb-2">Integrity</h3>
-            <p class="text-gray-600">
-              We uphold honesty, transparency, and trust in every interaction. Doing the right thing isn’t optional—it’s who we are.
-            </p>
-          </div>
-          <div>
-            <h3 class="text-xl font-semibold text-gray-800 mb-2">Innovation</h3>
-            <p class="text-gray-600">
-              We embrace change and use forward-thinking strategies to build smart, modern solutions that meet today’s challenges.
-            </p>
-          </div>
-          <div>
-            <h3 class="text-xl font-semibold text-gray-800 mb-2"> Excellence</h3>
-            <p class="text-gray-600">
-              We’re committed to delivering top-quality results with precision, professionalism, and passion.
-            </p>
-          </div>
-          <div>
-            <h3 class="text-xl font-semibold text-gray-800 mb-2"> Customer Focus</h3>
-            <p class="text-gray-600">
-              Your success is our priority. We listen, understand, and deliver solutions tailored to your unique goals.
-            </p>
-          </div>
-          <div>
-            <h3 class="text-xl font-semibold text-gray-800 mb-2">Collaboration</h3>
-            <p class="text-gray-600">
-              We believe in the power of teamwork—within our team and with yours. Together, we go further.
-            </p>
-          </div>
-        </div>
-      </div>
-    
-  </section>
-
-  <section id="contact" class="contact-section">
-    <h2>Contact Us</h2>
-    <form id="contact-form">
-      <input type="text" name="user_name" placeholder="Your Name" required />
-      <input type="email" name="user_email" placeholder="Your Email" required />
-      <textarea name="message" placeholder="Your Message" required></textarea>
-      <button type="submit">Send</button> 
-    </form>    
-    <!-- Social Media Buttons -->
-<div class="social-buttons">
-  <a href="https://wa.me/2348081641153" class="btn whatsapp" target="_blank">WhatsApp</a>
-  <a href="https://facebook.com/profile.php?id=100064162233819" class="btn facebook" target="_blank">Facebook</a>
-  <a href="https://linkedin.com/company/itac-solution/" class="btn linkedin" target="_blank">LinkedIn</a>
-  <a href="https://instagram.com/YOUR_PROFILE" class="btn instagram" target="_blank">Instagram</a>
-
-</div>
-
-  </section>
-
-
-  <footer class="footer">
-    <p>&copy; 2012 ITAC Solutions. All rights reserved.</p>
-    <p><a href="privacy.html" style="color: #00d1d1; text-decoration: underline;">Privacy Policy</a></p>
-  </footer>
-
-
- <script>src="script.js"</script>
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      /*** Scroll Animation using IntersectionObserver ***/
-      const animatedElements = document.querySelectorAll('.fade-in, .slide-up, .pop-up');
-  
-      const observer = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('animate'); // Use .animate in your CSS for all effects
-            observer.unobserve(entry.target);
-          }
-        });
-      }, { threshold: 0.2 });
-  
-      animatedElements.forEach(element => observer.observe(element));
-
-
-    
-
-
-      /*** Swipe Carousel Logic ***/
-      const container = document.querySelector('.carousel-container');
-      if (container) {
-        const track = container.querySelector('.carousel-track');
-  
-        let isDown = false;
-        let startX;
-        let scrollLeft;
-  
-        container.addEventListener('mousedown', (e) => {
-          isDown = true;
-          container.classList.add('active');
-          startX = e.pageX - container.offsetLeft;
-          scrollLeft = container.scrollLeft;
-        });
-  
-        container.addEventListener('mouseleave', () => {
-          isDown = false;
-          container.classList.remove('active');
-        });
-  
-        container.addEventListener('mouseup', () => {
-          isDown = false;
-          container.classList.remove('active');
-        });
-  
-        container.addEventListener('mousemove', (e) => {
-          if (!isDown) return;
-          e.preventDefault();
-          const x = e.pageX - container.offsetLeft;
-          const walk = (x - startX) * 2; // scroll speed
-          container.scrollLeft = scrollLeft - walk;
-        });
-  
-        // Touch support
-        container.addEventListener('touchstart', (e) => {
-          isDown = true;
-          startX = e.touches[0].pageX;
-          scrollLeft = container.scrollLeft;
-        });
-  
-        container.addEventListener('touchend', () => {
-          isDown = false;
-        });
-  
-        container.addEventListener('touchmove', (e) => {
-          if (!isDown) return;
-          const x = e.touches[0].pageX;
-          const walk = (x - startX) * 2;
-          container.scrollLeft = scrollLeft - walk;
-        });
-      }
-  
-      /*** Button-Controlled Image Carousel ***/
-      const images = document.querySelectorAll('.carousel img');
-      const prevBtn = document.getElementById('prevBtn');
-      const nextBtn = document.getElementById('nextBtn');
-      let currentIndex = 0;
-  
-      function updateCarousel(index) {
-        images.forEach((img, i) => {
-          img.classList.toggle('active', i === index);
-        });
-      }
-  
-      if (nextBtn && prevBtn && images.length > 0) {
-        nextBtn.addEventListener('click', () => {
-          currentIndex = (currentIndex + 1) % images.length;
-          updateCarousel(currentIndex);
-        });
-  
-        prevBtn.addEventListener('click', () => {
-          currentIndex = (currentIndex - 1 + images.length) % images.length;
-          updateCarousel(currentIndex);
-        });
-  
-        updateCarousel(currentIndex);
-      }
-    });
-
-     // ✅ Auto-slide every 3 seconds
-  setInterval(() => {
-    currentIndex = (currentIndex + 1) % images.length;
-    updateCarousel(currentIndex);
-  }, 3000);
-
-
-</script>
-
-<script>
-  const toggleBtn = document.querySelector('.menu-toggle');
-  const navLinks = document.querySelector('.nav-links');
-
-  toggleBtn.addEventListener('click', () => {
-    navLinks.classList.toggle('show');
-  });
-</script>
-
-
-<script>
-  const toggleButton = document.querySelector('.menu-toggle');
-  const navLinks = document.querySelector('.nav-links');
-
-  toggleButton.addEventListener('click', () => {
-    navLinks.classList.toggle('show');
-  });
-
-toggleButton.addEventListener('click', () => {
-  navLinks.classList.toggle('show');
-  toggleButton.setAttribute('aria-expanded', navLinks.classList.contains('show'));
-});
-</script>
-
-
+<!-- ✅ Script for Animations + Carousel -->
 <script>
   function toggleMenu() {
     document.getElementById("menu").classList.toggle("active");
   }
-</script>
 
-//<script>
-  let currentIndex = 0;
-  const slides = document.querySelectorAll('.carousel-track img');  // All images in the carousel
-  const totalSlides = slides.length;
+  document.addEventListener("DOMContentLoaded", function () {
+    const animatedElements = document.querySelectorAll('.fade-in, .slide-up, .pop-up');
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animate');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.2 });
 
-  // Function to move to the next slide
-  function goToNextSlide() {
-    currentIndex = (currentIndex + 1) % totalSlides; // Move to the next slide, or loop back to the first
-    updateCarouselPosition();
-  }
+    animatedElements.forEach(el => observer.observe(el));
 
-  // Function to update the carousel's position
-  function updateCarouselPosition() {
-    const offset = -currentIndex * (slides[0].clientWidth + 40); // Adjust for gap between images
-    const carouselTrack = document.querySelector('.carousel-track');
-    carouselTrack.style.transform = `translateX(${offset}px)`; // Move the track container
-  }
+    // Swipe/Scroll Carousel Logic
+    const container = document.querySelector('.carousel-container');
+    const track = container.querySelector('.carousel-track');
+    const slides = track.querySelectorAll('img');
+    let isDown = false, startX, scrollLeft;
 
-  // Set an interval for auto-sliding (change slide every 3 seconds)
-  setInterval(goToNextSlide, 3000);
+    container.addEventListener('mousedown', (e) => {
+      isDown = true;
+      startX = e.pageX - container.offsetLeft;
+      scrollLeft = container.scrollLeft;
+    });
 
-  // Optional: Swipe/Mouse functionality for manual control (if needed)
-  let startX;
+    container.addEventListener('mouseleave', () => isDown = false);
+    container.addEventListener('mouseup', () => isDown = false);
+    container.addEventListener('mousemove', (e) => {
+      if (!isDown) return;
+      const x = e.pageX - container.offsetLeft;
+      const walk = (x - startX) * 2;
+      container.scrollLeft = scrollLeft - walk;
+    });
 
-  // On mouse/touch down, record the starting position
-  document.querySelector('.carousel-container').addEventListener('mousedown', (e) => startX = e.pageX);
-  document.querySelector('.carousel-container').addEventListener('touchstart', (e) => startX = e.touches[0].pageX);
+    // Touch Events
+    container.addEventListener('touchstart', (e) => {
+      isDown = true;
+      startX = e.touches[0].pageX;
+      scrollLeft = container.scrollLeft;
+    });
 
-  // Detect swipe (mouse move or touch move)
-  document.querySelector('.carousel-container').addEventListener('mouseup', (e) => handleSwipe(e.pageX || e.changedTouches[0].pageX));
-  document.querySelector('.carousel-container').addEventListener('touchend', (e) => handleSwipe(e.changedTouches[0].pageX));
+    container.addEventListener('touchend', () => isDown = false);
+    container.addEventListener('touchmove', (e) => {
+      if (!isDown) return;
+      const x = e.touches[0].pageX;
+      const walk = (x - startX) * 2;
+      container.scrollLeft = scrollLeft - walk;
+    });
 
-  function handleSwipe(endX) {
-    if (startX - endX > 50) {
-      goToNextSlide(); // Swipe right (go to next slide)
-    } else if (endX - startX > 50) {
-      currentIndex = (currentIndex - 1 + totalSlides) % totalSlides; // Swipe left (go to previous slide)
-      updateCarouselPosition();
+    // Auto-slide
+    let currentIndex = 0;
+    function updateCarousel(index) {
+      slides.forEach((img, i) => {
+        img.classList.toggle('active', i === index);
+      });
     }
-  }
-</script>//
 
-
-
-
-<script>
-
-const track = document.querySelector('.carousel-track');
-const items = Array.from(track.children);
-
-// Duplicate items to make the loop seamless
-items.forEach(item => {
-  const clone = item.cloneNode(true);
-  track.appendChild(clone);
-});
-
-// Scroll continuously
-let position = 0;
-function animateCarousel() {
-  position -= 1; // speed of scroll
-  if (Math.abs(position) >= track.scrollWidth / 2) {
-    position = 0; // reset position when halfway through
-  }
-  track.style.transform = `translateX(${position}px)`;
-  requestAnimationFrame(animateCarousel);
-}
-animateCarousel();</script>
+    setInterval(() => {
+      currentIndex = (currentIndex + 1) % slides.length;
+      updateCarousel(currentIndex);
+    }, 3000);
+  });
+</script>
 
 </body>
 </html>
